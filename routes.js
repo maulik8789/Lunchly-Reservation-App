@@ -38,7 +38,7 @@ router.post("/add/", async function(req, res, next) {
     const notes = req.body.notes;
 
     const customer = new Customer({ firstName, lastName, phone, notes });
-    // console.log(customer.firstName)
+    console.log(customer.id)
     await customer.save();
     return res.redirect(`/${customer.id}/`);
   } catch (err) {
